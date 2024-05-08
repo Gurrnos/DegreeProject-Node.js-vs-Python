@@ -1,9 +1,10 @@
-import "./App.css";
-
 function App() {
   return (
     <>
-      <h1>Frontend fun... :,c</h1>
+      <div id="wrapper">
+        <button>Login</button>
+        <button>Sign Up</button>
+      </div>
     </>
   );
 }
