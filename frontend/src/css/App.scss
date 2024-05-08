@@ -22,10 +22,6 @@
             scale: 2;
         }
     
-        button:hover {
-            border-color: #646cff;
-        }
-    
         button:focus,
         button:focus-visible {
             outline: 4px auto -webkit-focus-ring-color;
@@ -66,15 +62,17 @@
         font-family: inherit;
         background-color: #1a1a1a;
         cursor: pointer;
-        transition: border-color 0.25s;
+        transition: scale 0.25s, background-color 0.5s ease, color 0.5s;
         color: honeydew;
         margin-top: 10vh;
         margin-inline: 5vw;
-        scale: 2;
+        scale: 1.8;
     }
     
     input:hover {
-        border-color: #646cff;
+        scale: 1.9;
+        color: #1a1a1a;
+        background-color: rgb(200, 200, 200);
     }
     
     input:focus,
