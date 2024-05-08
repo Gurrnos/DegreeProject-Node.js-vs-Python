@@ -10,8 +10,11 @@ app.use(
 );
 app.use(express.json());
 
-app.get('/', (req, res) => {
-  res.send('Hello, world!');
+app.post("/Login", function (req, res) {
+  const username = req.body.username;
+  const password = req.body.password;
+
+  console.log("username:", username, "password:", password)
 });
 
 app.listen(8080, () =>
