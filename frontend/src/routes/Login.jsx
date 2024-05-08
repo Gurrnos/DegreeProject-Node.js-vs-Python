@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 const Login = () => {
-    const [userData, setUserData] = useState({
-        username: "",
-        password: "",
-    })
+  const [userData, setUserData] = useState({
+    username: "",
+    password: "",
+  });
   function handleChange(e) {
     const { name, value } = e.target;
 
@@ -15,19 +15,52 @@ const Login = () => {
   }
   function Login(e) {
     const data = {
-        ...userData
-    }
+      ...userData,
+    };
+    fetch("http://localhost:8080/Login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to log in");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Logged in");
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
   }
 
   return (
     <>
-      <div>
-        <form onSubmit={Login}>
-          <input type="text" id="username" name="username" required onChange={handleChange}/>
-          <input type="password" id="password" name="password" required onChange={handleChange}/>
-          <input type="submit" value="Login"/>
-        </form>
-      </div>
+      <form onSubmit={Login}>
+        <div id="loginWrapper">
+          <input
+            type="text"
+            id="username"
+            name="username"
+            required
+            onChange={handleChange}
+          />
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            onChange={handleChange}
+          />
+        </div>
+        <div className="submit">
+          <input type="submit" value="Login" />
+        </div>
+      </form>
     </>
   );
 };
