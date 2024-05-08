@@ -1,10 +1,12 @@
 import { useState } from "react";
 
 const Login = () => {
+  
   const [userData, setUserData] = useState({
     username: "",
     password: "",
   });
+
   function handleChange(e) {
     const { name, value } = e.target;
 
@@ -13,7 +15,11 @@ const Login = () => {
       [name]: value,
     }));
   }
+
   function Login(e) {
+
+    e.preventDefault();
+
     const data = {
       ...userData,
     };
