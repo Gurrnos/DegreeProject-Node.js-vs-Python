@@ -34,13 +34,16 @@ const Login = () => {
         if (!response.ok) {
           throw new Error("Failed to log in");
         }
+
         return response.json();
       })
       .then((data) => {
         console.log("Logged in");
+        alert("Successfully logged in")
       })
       .catch((error) => {
         console.error(error.message);
+        alert("Failed to log in")
       });
   }
 
