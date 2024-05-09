@@ -38,8 +38,9 @@ const Login = () => {
         return response.json();
       })
       .then((data) => {
-        console.log("Logged in");
-        alert("Successfully logged in")
+        document.cookie = `_auth=${data.token}; path=/; secure; sameSite=strict`;
+
+        window.location.href = "/Account"
       })
       .catch((error) => {
         console.error(error.message);

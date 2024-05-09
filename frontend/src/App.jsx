@@ -2,6 +2,7 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Index from "./routes/Index.jsx";
 import Login from "./routes/Login.jsx";
 import Signup from "./routes/Signup.jsx";
+import Account from "./routes/Account.jsx"
 
 const Content = () => {
   return (
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "Signup",
         element: <Signup />,
+      },
+      {
+        path: "Account",
+        element: <Account />
       },
     ],
   },
