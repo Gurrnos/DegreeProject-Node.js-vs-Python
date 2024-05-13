@@ -30,3 +30,5 @@ def login():
 # In terminal, run python main.py
 if __name__ == '__main__':
     app.run(host='localhost', port=8080)
+
+    print("Server is running on http://localhost:8080")
