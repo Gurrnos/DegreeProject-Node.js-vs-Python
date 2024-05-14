@@ -8,6 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 backend-node/*.db
+backend-python/*.db
 frontend/node_modules
 backend-node/node_modules
 dist

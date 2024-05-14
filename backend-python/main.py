@@ -1,15 +1,19 @@
 import os
 from flask import Flask, request, jsonify, g
 import jwt
+from dotenv import load_dotenv
+import os
 import datetime
 import sqlite3
 from flask_cors import CORS
+
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "http://localhost:5173"}})
 
 # Secret key for JWT
-app.config['SECRET_KEY'] = 'super-secret-key'
+app.config['SECRET_KEY'] = os.getenv("JWT_SECRET")
 
 def get_db():
     if 'db' not in g:
