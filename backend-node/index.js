@@ -1,8 +1,8 @@
-const jwt = require('jsonwebtoken');
-const express = require('express');
+const jwt = require("jsonwebtoken");
+const express = require("express");
 const app = express();
 const db = require("better-sqlite3")("node-database.db");
-require('dotenv').config();
+require("dotenv").config();
 
 app.use(
   require("cors")({
@@ -28,7 +28,7 @@ app.post("/Login", function (req, res) {
   }
 
   if (password !== user.password) {
-    return res.status(401).json({ message: "Invalid username or password "});
+    return res.status(401).json({ message: "Invalid username or password " });
   }
 
   const jwtToken = jwt.sign(
@@ -36,7 +36,7 @@ app.post("/Login", function (req, res) {
     process.env.JWT_SECRET
   );
 
-  res.json({ message: "Hello user", token: jwtToken })
+  res.json({ message: "Hello user", token: jwtToken });
 });
 
 app.post("/getUser", function (req, res) {
@@ -56,13 +56,13 @@ app.post("/getUser", function (req, res) {
   }
 });
 
-
-
 app.post("/Signup", function (req, res) {
   const username = req.body.username;
   const password = req.body.password;
 
-  const createUserStmt = db.prepare("INSERT INTO Users (username, password) VALUES (?, ?)")
+  const createUserStmt = db.prepare(
+    "INSERT INTO Users (username, password) VALUES (?, ?)"
+  );
 
   createUserStmt.run(username, password);
 
