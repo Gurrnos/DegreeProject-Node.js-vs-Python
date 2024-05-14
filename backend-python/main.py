@@ -2,7 +2,6 @@ import os
 from flask import Flask, request, jsonify, g
 import jwt
 from dotenv import load_dotenv
-import os
 import datetime
 import sqlite3
 from flask_cors import CORS
