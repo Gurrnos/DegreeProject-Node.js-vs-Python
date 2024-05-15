@@ -51,7 +51,7 @@ const Login = () => {
   return (
     <>
       <form onSubmit={Login}>
-        <div id="loginWrapper">
+        <div id="LoginWrapper">
           <input
             type="text"
             id="username"

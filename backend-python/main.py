@@ -14,6 +14,8 @@ CORS(app, resources={r"/*": {"origins": "http://localhost:5173"}})
 # Secret key for JWT
 app.config['SECRET_KEY'] = os.getenv("JWT_SECRET")
 
+print(f"Loaded JWT_SECRET: {app.config['SECRET_KEY']}")
+
 def get_db():
     if 'db' not in g:
         db_path = os.path.join(os.path.dirname(__file__))
