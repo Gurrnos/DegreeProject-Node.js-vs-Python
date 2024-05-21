@@ -7,7 +7,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-*.env
+.env
 backend-node/*.db
 backend-python/*.db
 frontend/node_modules
